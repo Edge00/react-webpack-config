@@ -1,7 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const autoprefixer = require('autoprefixer')
 
 const resolve = str => path.join(__dirname, '..', str)
 
@@ -46,7 +48,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              plugins: [require('autoprefixer')]
+              plugins: [autoprefixer]
             }
           },
           {
