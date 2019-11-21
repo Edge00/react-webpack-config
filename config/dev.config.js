@@ -48,6 +48,7 @@ module.exports = {
     extensions: ['.js', '.json', '.jsx', '.css']
   },
   devServer: {
+    clientLogLevel: 'none',
     hot: true,
     open: true,
     contentBase: resolve('public'),
