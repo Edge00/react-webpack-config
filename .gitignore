@@ -13,6 +13,7 @@
 # production
 /build
 /qiniu
+/dist
 
 # misc
 .DS_Store
