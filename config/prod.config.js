@@ -72,7 +72,15 @@ const config = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: resolve('public/index.html'),
-      inject: true
+      inject: true,
+      minify: {
+        html5: true,
+        collapseWhitespace: true,
+        preserveLineBreaks: false,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: false
+      }
     }),
     new MiniCssExtractPlugin({
       filename: 'static/css/[name].[hash:5].css'
