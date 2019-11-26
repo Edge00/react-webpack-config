@@ -1,8 +1,8 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path')
 const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 const resolve = str => path.join(__dirname, '..', str)
 
@@ -43,7 +43,8 @@ module.exports = {
       template: resolve('public/index.html'),
       inject: true
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new FriendlyErrorsWebpackPlugin()
   ],
   resolve: {
     extensions: ['.js', '.json', '.jsx', '.css']

@@ -1,3 +1,13 @@
 body {
   color: red;
+  text-align: center;
+  img {
+    height: 20vh;
+  }
+  .img {
+    width: 100vw;
+    height: 20vh;
+    background: url('../../assets/images/tree.png') no-repeat center;
+    background-size: contain;
+  }
 }

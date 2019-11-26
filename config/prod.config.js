@@ -1,13 +1,14 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const autoprefixer = require('autoprefixer')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
 
 const resolve = str => path.join(__dirname, '..', str)
 
-module.exports = {
+const config = {
   mode: 'production',
   entry: resolve('src/index'),
   output: {
@@ -75,7 +76,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'static/css/[name].[hash:5].css'
-    })
+    }),
+    new FriendlyErrorsWebpackPlugin(),
+    new ManifestPlugin()
   ],
   resolve: {
     extensions: ['.js', '.json', '.jsx', '.css']
@@ -83,3 +86,10 @@ module.exports = {
   stats: 'errors-only',
   devtool: 'cheap-module-source-map'
 }
+
+module.exports = config
+
+// 如果要分析打包耗时，使用 speedMeasure
+// const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
+// const speedMeasure = new SpeedMeasurePlugin()
+// module.exports = speedMeasure.wrap(config)
