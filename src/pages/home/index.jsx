@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import './index.scss'
 
-const Home = () => <h1>Home</h1>
+class Home extends PureComponent {
+  state = {
+    name: 'home'
+  }
+
+  render() {
+    return <h1>{this.state.name}</h1>
+  }
+}
 
 export default Home

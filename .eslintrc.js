@@ -1,10 +1,11 @@
 module.exports = {
+  parser: 'babel-eslint',
   env: {
     browser: true,
-    es6: true,
-    node: true
+    node: true,
+    es6: true
   },
-  extends: ['airbnb'],
+  extends: ['standard', 'plugin:react/recommended', 'prettier'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
@@ -17,9 +18,5 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react'],
-  rules: {
-    semi: ['error', 'never'],
-    'arrow-parens': 'off',
-    'comma-dangle': 'off'
-  }
+  rules: {}
 }
