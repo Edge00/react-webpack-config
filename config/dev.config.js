@@ -56,8 +56,8 @@ module.exports = {
     contentBase: resolve('public'),
     stats: 'errors-only',
     proxy: {
-      '/v1': {
-        target: 'http://invite-growth-center-4a2071.ndev.imdada.cn',
+      '/api': {
+        target: '//xxx.xxx.cn',
         changeOrigin: true
       }
     }
